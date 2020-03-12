@@ -23,10 +23,10 @@ inputs:
     description: 'Version name'
     required: true
   versionDescription:
-    description: 'Version name'
+    description: 'Version description'
     required: false
   versionVcsTag:
-    description: 'Version name'
+    description: 'Version git tag'
     required: false
   licenses:
     description: 'Package licences, comma-separated. For OSS, must of the licenses enumerated in https://bintray.com/api/v1/licenses/oss_licenses'
@@ -36,4 +36,4 @@ inputs:
     required: true
 runs:
   using: 'node12'
-  main: 'index.js'
+  main: 'lib/index.js'
