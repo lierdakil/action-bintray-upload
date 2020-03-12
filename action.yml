@@ -16,6 +16,9 @@ inputs:
   package:
     description: 'Package name'
     required: true
+  createPkg:
+    description: "If set, will try to create package if it's missing"
+    required: false
   version:
     description: 'Version name'
     required: true
@@ -25,6 +28,9 @@ inputs:
   versionVcsTag:
     description: 'Version name'
     required: false
+  licenses:
+    description: 'Package licences, comma-separated. For OSS, must of the licenses enumerated in https://bintray.com/api/v1/licenses/oss_licenses'
+    required: true
   filesGlob:
     description: 'File glob to upload'
     required: true

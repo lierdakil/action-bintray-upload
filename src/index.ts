@@ -1,4 +1,5 @@
 import core = require('@actions/core')
+import github = require('@actions/github')
 import { Bintray } from 'bintray-ts'
 import glob = require('glob')
 
@@ -8,6 +9,7 @@ async function run() {
   const subject = core.getInput('subject') || username
   const repository = core.getInput('repository')
   const pkg = core.getInput('package')
+  const createPkg = core.getInput('createPkg')
   const version = core.getInput('version')
   const versionDescription = core.getInput('versionDescription')
   const versionVcsTag = core.getInput('versionVcsTag')
@@ -17,7 +19,16 @@ async function run() {
   const br = bt.repository(repository)
   await br.info()
   const bp = br.package(pkg)
-  await bp.info()
+  try {
+    await bp.info()
+  } catch (e) {
+    if (!createPkg) throw e
+    console.error(e)
+    await bp.create({
+      licenses: core.getInput('licenses').split(',') as any[],
+      vcs_url: `https://github.com/${github.context.repo.owner}/${github.context.repo.repo}.git`,
+    })
+  }
   const bv = bp.version(version)
   try {
     await bv.info()
