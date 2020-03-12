@@ -1,0 +1,33 @@
+name: 'BinTray Upload'
+description: 'Upload files to BinTray'
+inputs:
+  username:
+    description: 'Login username'
+    required: true
+  apikey:
+    description: 'BinTray API key'
+    required: true
+  subject:
+    description: 'Owner of the repository'
+    required: false
+  repository:
+    description: 'Repository name'
+    required: true
+  package:
+    description: 'Package name'
+    required: true
+  version:
+    description: 'Version name'
+    required: true
+  versionDescription:
+    description: 'Version name'
+    required: false
+  versionVcsTag:
+    description: 'Version name'
+    required: false
+  filesGlob:
+    description: 'File glob to upload'
+    required: true
+runs:
+  using: 'node12'
+  main: 'index.js'

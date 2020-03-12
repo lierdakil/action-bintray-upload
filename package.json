@@ -1,0 +1,34 @@
+{
+  "name": "action-bintray-upload",
+  "version": "0.0.1",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lierdakil/action-bintray-upload.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lierdakil/action-bintray-upload/issues"
+  },
+  "homepage": "https://github.com/lierdakil/action-bintray-upload#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.3",
+    "@actions/github": "^2.1.1",
+    "bintray-ts": "https://github.com/lierdakil/node-bintray-ts",
+    "glob": "^7.1.6"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.1",
+    "@types/node": "^12.12.29",
+    "atom-haskell-tslint-rules": "^0.2.2",
+    "prettier": "^1.19.1",
+    "tslint": "^6.1.0",
+    "typescript": "^3.8.3",
+    "typescript-tslint-plugin": "^0.5.5"
+  }
+}
